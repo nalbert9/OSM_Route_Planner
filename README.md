@@ -1,7 +1,7 @@
 #  OpenStreetMap RoutePlanner
 
 ### Introduction
-In this project, we will write a program in C++ using real map data and A* search to find a path between two points, just as we might see in a desktop or mobile mapping application. The project will be using data from the [**OpenStreetMap project**](https://www.openstreetmap.org/#map=6/46.449/2.210).
+In this project, we will write a program in C++ using real __OpenStreetMap data__ and __A* search__ to find a path between two points, just as we might see in a desktop or mobile mapping application. The project will be using data from the [**OpenStreetMap project**](https://www.openstreetmap.org/#map=6/46.449/2.210).
 
 <p align="center"> 
     <img src="Assets/OSM.jpg" align="middle" alt="drawing" width="300px"> 
@@ -11,7 +11,7 @@ In this project, we will write a program in C++ using real map data and A* searc
 
 1. OpenStreetMap Data
 
-OpenStreetMap data that we used for this project comes in the form of an OSM XML file (.osm file). Nodes, ways and relations are some of the fundamental building blocks of OSM data files.
+OpenStreetMap data that we used for this project comes in the form of an OSM XML file (*.osm file*). Nodes, ways and relations are some of the fundamental building blocks of OSM data files.
 
 2. Data Types Overview
 
