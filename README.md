@@ -1,7 +1,7 @@
 #  OpenStreetMap RoutePlanner
 
 ### Introduction
-In this project, we will write a program in C++ using real __OpenStreetMap data__ and __A* search__ to find a path between two points, just as we might see in a desktop or mobile mapping application. The project will be using data from the [**OpenStreetMap project**](https://www.openstreetmap.org/#map=6/46.449/2.210).
+In this project, we will write a program in C++ using real [**OpenStreetMap data**](https://www.openstreetmap.org/#map=6/46.449/2.210)__ and __A* search__ to find a path between two points, just as we might see in a desktop or mobile mapping application.
 
 <p align="center"> 
     <img src="Assets/OSM.jpg" align="middle" alt="drawing" width="300px"> 
