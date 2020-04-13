@@ -23,7 +23,7 @@ OpenStreetMap data that we used for this project comes in the form of an OSM XML
 
 ## Instructions
 
-Both the code to parse the OSM data and the data structures which are used to store the data in your program have already been written in the [IO2D OpenStreetMap example](https://github.com/cpp-io2d/P0267_RefImpl/tree/master/P0267_RefImpl/Samples/maps).
+Both the code to parse the OSM data and the data structures which are used to store the data in our program have already been written in the 2D Graphics Library, [IO2D OpenStreetMap example](https://github.com/cpp-io2d/P0267_RefImpl/tree/master/P0267_RefImpl/Samples/maps).
 
 ### Cloning
 
@@ -32,7 +32,10 @@ When cloning this project, be sure to use the `--recurse-submodules` flag. Using
 git clone https://github.com/nalbert9/OSM_Route_Planner.git --recurse-submodules
 ```
 
-### Dependencies for Running Locally
+### Dependencies for Running
+
+This project uses CMake as the build system. You will need to install the project dependencies, including the IO2D library.
+
 * cmake >= 3.11.3
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1 (Linux, Mac), 3.81 (Windows)
