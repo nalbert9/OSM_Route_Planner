@@ -21,6 +21,7 @@ RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, floa
 
 float RoutePlanner::CalculateHValue(RouteModel::Node const *node) {
     /* Set h value
+
        Can use the distance to the end_node for the h value.
        Node objects have a distance method to determine the distance to another node.
     */
@@ -30,30 +31,38 @@ float RoutePlanner::CalculateHValue(RouteModel::Node const *node) {
 }
 
 
-// TODO 4: Complete the AddNeighbors method to 
-// Tips:
-
 
 void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
-    /*Expand the current node by adding all unvisited neighbors to the open list.
-      Use the FindNeighbors() method of the current_node to populate current_node.neighbors vector with all the neighbors.
-      For each node in current_node.neighbors, set the parent, the h_value, the g_value. 
-      Use CalculateHValue below to implement the h-Value calculation.
-      For each node in current_node.neighbors, add the neighbor to open_list and set the node's visited attribute to true.
-    */
+    // Expand the current node by adding all unvisited neighbors to the open list.
 
+    // Use the FindNeighbors() method of the current_node to populate current_node.neighbors vector with all the neighbors.
+    current_node->RouteModel::Node::FindNeighbors();
+
+    // For each node in current_node.neighbors, set the parent, the h_value, the g_value. 
+    for (RouteModel::Node* node : current_node->neighbors){
+        neighbor->parent  = current_node;
+
+        //Use CalculateHValue below to implement the h-Value calculation.
+        neighbor->h_value = this->CalculateHValue(current_node);
+
+        neighbor->g_value = current_node->g_value + current_node->distance(*neighbor);
+
+        open_list.push_back(neighbor);
+        neighbor->visited = true;
+    }
 
 }
 
 
-// TODO 5: Complete the NextNode method to sort the open list and return the next node.
-// Tips:
-// - Sort the open_list according to the sum of the h value and g value.
-// - Create a pointer to the node in the list with the lowest sum.
-// - Remove that node from the open_list.
-// - Return the pointer.
+
 
 RouteModel::Node *RoutePlanner::NextNode() {
+    /*Sort the open_list according to the sum of the h value and g and return the next node.
+
+      Create a pointer to the node in the list with the lowest sum.
+      Remove that node from the open_list.
+      Return the pointer.
+    */
 
 }
 
