@@ -1,7 +1,7 @@
 #  OpenStreetMap RoutePlanner
 
 ### Introduction
-In this project, we will write a program in C++ using real [**OpenStreetMap data**](https://www.openstreetmap.org/#map=6/46.449/2.210) and __A* search__ to find a path between two points, just as we might see in a desktop or mobile mapping application.
+In this project, we will write a program in C++ using real [**OpenStreetMap data**](https://www.openstreetmap.org/#map=6/46.449/2.210) and __A* search algorithm__ to find a path between two points, just as we might see in a desktop or mobile mapping application.
 
 <p align="center"> 
     <img src="Assets/OSM.jpg" align="middle" alt="drawing" width="300px"> 
@@ -23,7 +23,7 @@ OpenStreetMap data that we used for this project comes in the form of an OSM XML
 
 ## Instructions
 
-Both the code to parse the OSM data and the data structures which are used to store the data in our program have already been written in the 2D Graphics Library, [IO2D OpenStreetMap example](https://github.com/cpp-io2d/P0267_RefImpl/tree/master/P0267_RefImpl/Samples/maps).
+Both the code to parse the OSM data and the data structures which are used to store the data in our program have already been written in the 2D Graphics Library, [IO2D OpenStreetMap example](https://github.com/cpp-io2d/P0267_RefImpl/tree/master/P0267_RefImpl/Samples/maps). Click on the link to have an ovewiew of the [OSM route planner code structure](https://github.com/nalbert9/OSM_Route_Planner/blob/master/Assets/OSM_Route_Planner_Structure.png).
 
 ### Cloning
 
