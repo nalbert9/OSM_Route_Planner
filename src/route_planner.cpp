@@ -107,11 +107,6 @@ std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node 
 
 }
 
-
-// TODO 7: Write the A* Search algorithm here.
-// Tips:
-
-
 void RoutePlanner::AStarSearch() {
     // A* Search algorithm
     
