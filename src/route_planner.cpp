@@ -38,7 +38,7 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
     current_node->RouteModel::Node::FindNeighbors();
 
     // For each node in current_node.neighbors, set the parent, the h_value, the g_value. 
-    for (RouteModel::Node* node : current_node->neighbors){
+    for (RouteModel::Node* neighbor : current_node->neighbors){
         neighbor->parent  = current_node;
 
         //Use CalculateHValue below to implement the h-Value calculation.
@@ -125,6 +125,5 @@ void RoutePlanner::AStarSearch() {
         
         // Use the AddNeighbors method to add all of the neighbors of the current node to the open_list.
         AddNeighbors(current_node);
-    return path_found;
 
 }
