@@ -2,9 +2,9 @@
 #include <algorithm>
 
 RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, float end_x, float end_y): m_Model(model) {
-    /* Use the m_Model.FindClosestNode method to find the closest nodes to the starting and ending coordinates.
-       Store the nodes you find in the RoutePlanner's start_node and end_node attributes.
-    */
+/* Use the m_Model.FindClosestNode method to find the closest nodes to the starting and ending coordinates.
+    Store the nodes you find in the RoutePlanner's start_node and end_node attributes.
+*/
 
     // Convert inputs to percentage:
     start_x *= 0.01;
@@ -80,20 +80,27 @@ RouteModel::Node *RoutePlanner::NextNode() {
 }
 
 
-// TODO 6: Complete the ConstructFinalPath method to return the final path found from your A* search.
-// Tips:
-// - This method should take the current (final) node as an argument and iteratively follow the 
-//   chain of parents of nodes until the starting node is found.
-// - For each node in the chain, add the distance from the node to its parent to the distance variable.
-// - The returned vector should be in the correct order: the start node should be the first element
-//   of the vector, the end node should be the last element.
-
 std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
+    // This method return the final path found from the A* search.
+
     // Create path_found vector
     distance = 0.0f;
     std::vector<RouteModel::Node> path_found;
 
-    // TODO: Implement your solution here.
+    RouteModel::Node *current = current_node;
+    while(current != start_node) {
+        path_found.push_back(*current);
+
+        // For each node in the chain, add the distance from the node to its parent to the distance variable.
+        distance += current->distance(*current->parent);
+        current = current->parent;
+    }
+
+    path_found.push_back(*current);
+
+    // The returned vector should be in the correct order: the start node should be the first element
+    // of the vector, the end node should be the last element.
+    std::reverse(path_found.begin(), path_found.end());
 
     distance *= m_Model.MetricScale(); // Multiply the distance by the scale of the map to get meters.
     return path_found;
@@ -112,5 +119,7 @@ void RoutePlanner::AStarSearch() {
     RouteModel::Node *current_node = nullptr;
 
     // TODO: Implement your solution here.
+
+    return path_found;
 
 }
