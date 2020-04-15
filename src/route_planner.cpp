@@ -31,7 +31,6 @@ float RoutePlanner::CalculateHValue(RouteModel::Node const *node) {
 }
 
 
-
 void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
     // Expand the current node by adding all unvisited neighbors to the open list.
 
@@ -54,7 +53,15 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
 }
 
 
+bool compareSumHGvalue(const RouteModel::Node *node_1, const RouteModel::Node *node_2) {
+    // NextNode method sort comparator 
 
+    float f1 = node_1->g_value + node_1->h_value;
+    float f2 = node_2->g_value + node_2->h_value;
+
+    return f1 > f2;
+
+}
 
 RouteModel::Node *RoutePlanner::NextNode() {
     /*Sort the open_list according to the sum of the h value and g and return the next node.
@@ -63,6 +70,12 @@ RouteModel::Node *RoutePlanner::NextNode() {
       Remove that node from the open_list.
       Return the pointer.
     */
+
+    std::sort(open_list.begin(), open_list.end(), compareSumHGvalue);
+    RouteModel::Node* node_lowest_sum = this->open_list.back();
+    this->open_list.pop_back();
+
+    return node_lowest_sum;
 
 }
 
