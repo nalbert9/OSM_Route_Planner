@@ -19,7 +19,7 @@ RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, floa
 }
 
 
-float RoutePlanner::CalculateHValue(RouteModel::Node const *node) {
+float RoutePlanner::CalculateHValue(const RouteModel::Node *node) {
     /* Set h value
 
        Can use the distance to the end_node for the h value.
@@ -42,11 +42,10 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
         neighbor->parent  = current_node;
 
         //Use CalculateHValue below to implement the h-Value calculation.
-        neighbor->h_value = this->CalculateHValue(current_node);
-
+        neighbor->h_value = CalculateHValue(neighbor);
         neighbor->g_value = current_node->g_value + current_node->distance(*neighbor);
 
-        open_list.push_back(neighbor);
+        this->open_list.push_back(neighbor);
         neighbor->visited = true;
     }
 
@@ -125,5 +124,6 @@ void RoutePlanner::AStarSearch() {
         
         // Use the AddNeighbors method to add all of the neighbors of the current node to the open_list.
         AddNeighbors(current_node);
+    }
 
 }
