@@ -4,9 +4,10 @@
 In this project, we will write a program in C++ using real [**OpenStreetMap data**](https://www.openstreetmap.org/#map=6/46.449/2.210) and __A* search algorithm__ to find a path between two points, just as we might see in a desktop or mobile mapping application.
 
 <p align="center"> 
-    <img src="Assets/OSM.jpg" align="middle" alt="drawing" width="300px"> 
+    <img src="Assets/map.png" align="middle" alt="drawing" width="300px"> 
 </p>
 
+-> Example of OpenStreetMap with plotted path <-
 ## Getting Started
 
 1. OpenStreetMap Data
