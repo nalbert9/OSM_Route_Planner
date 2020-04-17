@@ -12,13 +12,13 @@ RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, floa
     end_x *= 0.01;
     end_y *= 0.01;
 
-
+    // TODO 2
     start_node = &m_Model.FindClosestNode(start_x, start_y);
     end_node   = &m_Model.FindClosestNode(end_x, end_y);
 
 }
 
-
+// TODO 3
 float RoutePlanner::CalculateHValue(const RouteModel::Node *node) {
     /* Set h value
 
@@ -31,6 +31,7 @@ float RoutePlanner::CalculateHValue(const RouteModel::Node *node) {
 }
 
 
+// TODO 4
 void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
     // Expand the current node by adding all unvisited neighbors to the open list.
 
@@ -62,6 +63,8 @@ bool compareSumHGvalue(const RouteModel::Node *node_1, const RouteModel::Node *n
 
 }
 
+
+// TODO 5
 RouteModel::Node *RoutePlanner::NextNode() {
     /*Sort the open_list according to the sum of the h value and g and return the next node.
 
@@ -79,6 +82,7 @@ RouteModel::Node *RoutePlanner::NextNode() {
 }
 
 
+// TODO 6
 std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
     // This method return the final path found from the A* search.
 
@@ -106,6 +110,8 @@ std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node 
 
 }
 
+
+// TODO 7
 void RoutePlanner::AStarSearch() {
     // A* Search algorithm
     
