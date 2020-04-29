@@ -27,18 +27,6 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
     return std::move(contents);
 }
 
-// Coordinates constraints
-/*
-void Validate (float coordinate) {
-    while ( !(std::cin) || coordinate < 0 || coordinate > 100 ) {
-        throw std::invalid_argument("Invalid coordinate");
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin >> coordinate;
-    }
-}
-
-*/
 int main(int argc, const char **argv)
 {    
     std::string osm_data_file = "";
